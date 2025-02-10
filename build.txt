@@ -1,0 +1,3 @@
+displayName = Jupiter-8 Synthesizer
+author = analog synthesis
+version = 0.1
