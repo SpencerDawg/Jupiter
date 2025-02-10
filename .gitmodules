@@ -1,0 +1,3 @@
+[submodule "lib/2xFM"]
+	path = lib/2xFM
+	url = https://github.com/SpencerDawg/2xFM.git
