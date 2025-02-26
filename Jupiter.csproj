@@ -3,7 +3,7 @@
 	<!-- Environment Variables -->
 	<PropertyGroup> 
 		<TargetsPath Condition="'$(TargetsPath)' == ''">/home/coolbugs/.local/share/Terraria/tModLoader/ModSources/tModLoader.targets</TargetsPath>
-		<TxFMPath Condition="'$(2xFMPath)' == ''">../2xFM/TxFM.csproj</TxFMPath>
+		<TxFMPath Condition="'$(TxFMPath)' == ''">..\TxFM\TxFM.csproj</TxFMPath>
 	</PropertyGroup>  
 
 	<Import Project="$(TargetsPath)" />
@@ -17,21 +17,24 @@
 	
 	<!-- General -->
 	<PropertyGroup>
-		
+
 	</PropertyGroup>
+
+	<ItemGroup>
+        <Folder Include="lib/" />
+    </ItemGroup>
 
 	<Target Name="CopyReferenceAssemblies" BeforeTargets="Build">
         <ItemGroup>
-            <ReferenceAssemblies Include="../TxFM.dll"/>
+            <ReferenceAssemblies Include="../TxFM.dll" />
         </ItemGroup>
 
-        <Copy SourceFiles="@(ReferenceAssemblies)"
-              DestinationFolder="./lib"/>
+        <Copy SourceFiles="@(ReferenceAssemblies)" DestinationFolder="./lib" />
     </Target>
 
 	<!-- References -->
 	<ItemGroup>
-		
+	  <ProjectReference Include="$(TxFMPath)" />
 	</ItemGroup>
 
 </Project>
