@@ -20,7 +20,7 @@
 		
 	</PropertyGroup>
 
-	<Target Name="CopyReferenceAssemblies" AfterTargets="Build">
+	<Target Name="CopyReferenceAssemblies" BeforeTargets="Build">
         <ItemGroup>
             <ReferenceAssemblies Include="../TxFM.dll"/>
         </ItemGroup>
